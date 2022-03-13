@@ -3,7 +3,7 @@
 
 void showLocate();
 void moveWith(char* mover);
-int findLocation(char* mover);//움직이려는 객체의 위치 파악
+int findLocation(char* mover);
 
 #define LEFT 1
 #define RIGHT 0
