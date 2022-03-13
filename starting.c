@@ -206,4 +206,5 @@ void showLocate()
 void moveWithWoolf()
 {
 	printf(" ");
+	
 }
