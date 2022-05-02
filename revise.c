@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
 #include<stdbool.h>
@@ -23,7 +24,7 @@ int AskForUser(void);
 
 char* left[4] = { "wolf","goat","cabbage","man" };
 char* right[4] = { 0, };
-int choose = 1, i, j = 0,moverNum;
+int choose = 1, i, j = 0, moverNum;
 int location[4];
 int m1Location, m2Location;
 int count;
@@ -31,9 +32,9 @@ int count;
 
 int main(void)
 {
-	
 
-	printf("<--press [5] to reset/ [6] to exit--> \n");
+
+	printf("<--press [6] to exit--> \n");
 	printf("man move along with : [1] woolf[2]goat[3]cabbage[4]none of them\n");
 	scanf("%d", &choose);
 
@@ -84,22 +85,17 @@ int main(void)
 		case 6:
 			return 0;
 
-		case 5:
-			if (AskForUser() == 1)
-			{
-				return 0;
-			}
 		}
 
 		if (sameLocate("goat", "cabbage") == true && sameLocate("goat", "man") == false)
 		{
 			printf("Game Over: the cabbage was eaten by goat!\n");
-			
+
 			if (AskForUser() == 0)
 			{
 				return 0;
 			}
-			
+
 		}
 		if (sameLocate("goat", "wolf") == true && sameLocate("goat", "man") == false)
 		{
@@ -110,7 +106,7 @@ int main(void)
 
 		for (i = 0; i < 4; i++)
 		{
-			
+
 			if (location[i] == RIGHT)count++;
 			if (count == 4) {
 				printf("You solve the problem.");
@@ -118,7 +114,7 @@ int main(void)
 			}
 		}
 		count = 0;
-		printf("man move along with : [1] woolf[2]goat[3]cabbage[4]none of them");
+		printf("man move along with : [1] woolf[2]goat[3]cabbage[4]none of them\n");
 		scanf("%d", &choose);
 
 	}
@@ -217,7 +213,7 @@ void showLocate()
 
 int sameLocate(char* mover1, char* mover2)
 {
-	
+
 	findLocation(mover1);
 	m1Location = location[moverNum];
 	findLocation(mover2);
